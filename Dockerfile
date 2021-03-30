@@ -4,6 +4,7 @@ WORKDIR /root
 RUN apk add --no-cache alpine-sdk gcc musl-dev git cmake
 RUN git clone https://github.com/taosdata/TDengine.git
 RUN mkdir build && cd build 
+RUN export VERBOSE=defined
 RUN cmake ../TDengine 
 RUN cmake --build .
 
