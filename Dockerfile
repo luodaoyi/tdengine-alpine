@@ -2,10 +2,10 @@ FROM alpine:3.13 as compile
 WORKDIR /root
 
 RUN apk add --no-cache alpine-sdk gcc musl-dev git cmake
-
 RUN git clone https://github.com/taosdata/TDengine.git
-RUN mkdir build && cd build && cmake ../TDengine && cmake --build .
-
+RUN mkdir build && cd build 
+RUN cmake ../TDengine 
+RUN cmake --build .
 
 
 FROM alpine:3.13 as base
